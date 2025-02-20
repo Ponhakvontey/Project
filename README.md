@@ -4,3 +4,4 @@ Topic: Personal Finance Manager
 Methodology Planning Milestones
 ![alt text](output.png)
 
+![alt text](image.png)
