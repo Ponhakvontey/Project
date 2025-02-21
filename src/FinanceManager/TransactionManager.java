@@ -138,7 +138,7 @@ public class TransactionManager {
         System.out.println("|                                                    Summary View                                                           |");
         System.out.println("|                                                                                                                           |");
         System.out.println("============================================================================================================================");
-        System.out.println("|               Date               |                      Type                      |              Description             |");
+        System.out.println("|               Date               |                      Type                      |              Description              |");
         System.out.println("============================================================================================================================");
 
         int index = 1;

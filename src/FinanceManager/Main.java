@@ -62,13 +62,13 @@ public class Main {
             // Show the second menu only if the user is logged in
             while (sessionManager.getLoggedInUser() != null) {
                 System.out.println("============================================================================================================================");
-                System.out.println("|                                          Personal Finance Manager                                                       |");
+                System.out.println("|                                          Personal Finance Manager                                                        |");
                 System.out.println("|                                   Please select from the following options:                                              |");
                 System.out.println("|                                         1) View User Account Status                                                      |");
                 System.out.println("|                                         2) Add Transaction                                                               |");
-                System.out.println("|                                         3) View Transaction History                                                     |");
-                System.out.println("|                                         4) Savings                                                                      |");
-                System.out.println("|                                         5) Logout                                                                       |");
+                System.out.println("|                                         3) View Transaction History                                                      |");
+                System.out.println("|                                         4) Savings                                                                       |");
+                System.out.println("|                                         5) Logout                                                                        |");
                 System.out.println("============================================================================================================================");
                 System.out.print("Please choose an option: ");
                 int userOption = scanner.nextInt();
