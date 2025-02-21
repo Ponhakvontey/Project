@@ -67,8 +67,8 @@ public class Main {
                 System.out.println("|                                         1) View User Account Status                                                      |");
                 System.out.println("|                                         2) Add Transaction                                                               |");
                 System.out.println("|                                         3) View Transaction History                                                     |");
-                System.out.println("|                                         4) Logout                                                                       |");
-                System.out.println("|                                         5) Savings                                                                      |");
+                System.out.println("|                                         4) Savings                                                                      |");
+                System.out.println("|                                         5) Logout                                                                       |");
                 System.out.println("============================================================================================================================");
                 System.out.print("Please choose an option: ");
                 int userOption = scanner.nextInt();
