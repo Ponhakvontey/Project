@@ -40,12 +40,12 @@ public class DraftFinanceManager {
             return;
         }
         System.out.println("============================================================================================================================");
-        System.out.println("|                                                  Username: " + user.username + "                                                          |");
+        System.out.println("|                                                  Username: " + user.username + "                                                           |");
         System.out.println("============================================================================================================================");
-        System.out.println("|                                                  Total Income: $" + user.totalIncome + "                                                   |");
-        System.out.println("|                                                  Total Expense: $" + user.totalExpense + "                                                  |");
-        System.out.println("|                                                  Savings: $" + user.savings + "                                                           |");
-        System.out.println("|                                                  Net Balance: $" + (user.totalIncome - user.totalExpense-user.savings) + "                                                 |");
+        System.out.println("|                                                  Total Income: $" + user.totalIncome + "                                                    |");
+        System.out.println("|                                                  Total Expense: $" + user.totalExpense + "                                                     |");
+        System.out.println("|                                                  Savings: $" + user.savings + "                                                          |");
+        System.out.println("|                                                  Net Balance: $" + (user.totalIncome - user.totalExpense-user.savings) + "                                                     |");
         System.out.println("============================================================================================================================");
     }
 }

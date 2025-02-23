@@ -115,16 +115,16 @@ public class TransactionManager {
     private void displayTableRowView() {
         User user = session.getLoggedInUser();
         System.out.println("============================================================================================================================");
-        System.out.println("|                                                                                                                           |");
-        System.out.println("|                                                    Table Row View                                                         |");
-        System.out.println("|                                                                                                                           |");
+        System.out.println("|                                                                                                                          |");
+        System.out.println("|                                                    Table Row View                                                        |");
+        System.out.println("|                                                                                                                          |");
         System.out.println("============================================================================================================================");
-        System.out.println("|       No.        |         Amount          |          Type          |         Date         |         Description          |");
+        System.out.println("|       No.        |         Amount          |          Type          |         Date         |         Description         |");
         System.out.println("============================================================================================================================");
 
         int index = 1;
         for (Transaction t : user.transactions) {
-            System.out.printf("| %-16d | $%-22.2f | %-22s | %-20s | %-28s |\n",
+            System.out.printf("| %-16d | $%-22.2f | %-22s | %-20s | %-27s |\n",
                 index, t.amount, t.type, t.date, t.description);
             index++;
         }
@@ -134,11 +134,11 @@ public class TransactionManager {
     private void displaySummaryView() {
         User user = session.getLoggedInUser();
         System.out.println("============================================================================================================================");
-        System.out.println("|                                                                                                                           |");
-        System.out.println("|                                                    Summary View                                                           |");
-        System.out.println("|                                                                                                                           |");
+        System.out.println("|                                                                                                                          |");
+        System.out.println("|                                                    Summary View                                                          |");
+        System.out.println("|                                                                                                                          |");
         System.out.println("============================================================================================================================");
-        System.out.println("|               Date               |                      Type                      |              Description              |");
+        System.out.println("|               Date               |                      Type                      |              Description             |");
         System.out.println("============================================================================================================================");
 
         int index = 1;
@@ -172,7 +172,7 @@ public class TransactionManager {
 
         System.out.println("============================================================");
         System.out.println("|                                                          |");
-        System.out.println("|                    [Description: " + t.description + "]                   |");
+        System.out.println("|                    [Description: " + t.description + "]                 |");
         System.out.println("|                                                          |");
         System.out.println("============================================================");
         System.out.printf("| Date: %-50s |\n", t.date);

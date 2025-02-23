@@ -97,10 +97,11 @@ public class SavingsManager {
         System.out.println("============================================================");
 
         for (User.SavingsRecord sr : user.savingsRecords) {
-            System.out.printf("| %-13s | $%-36.2f |\n", sr.date, sr.amountSaved);
+            System.out.printf("| %-14s | $%-38.2f |\n", sr.date, sr.amountSaved);
         }
         System.out.println("============================================================");
-        System.out.printf("Total Savings: $%.2f\n", user.savings);
+        System.out.printf("|Total Savings: $%-42.2f|\n", user.savings);
+        System.out.println("============================================================");
     }
 
     // The main sub-menu for all savings features
