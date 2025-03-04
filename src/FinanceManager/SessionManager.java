@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class SessionManager {
-    private static final String DATA_FILE = "users.dat";
+    private static final String DATA_FILE = "users.txt";
 
     // Keep track of all users
     private final Map<String, User> users = new HashMap<>();

@@ -16,7 +16,7 @@ public class User implements Serializable {
 
     // Savings-related fields
     public double savings = 0;
-    public double savingsRate = 0.10;
+    public double savingsRate = 0;
     public double savingsGoal = 0;
     public int savingTimeMonths = 0;
 

@@ -11,6 +11,7 @@ public class TransactionManager {
     public TransactionManager(SessionManager session) {
         this.session = session;
     }
+    
 
     // Add a new transaction (Income, Expense, or Savings)
     public void addTransaction(Scanner scanner) {
@@ -140,18 +141,12 @@ public class TransactionManager {
         System.out.println("============================================================================================================================");
         System.out.println("|               Date               |                      Type                      |              Description             |");
         System.out.println("============================================================================================================================");
-
-        int index = 1;
         for (Transaction t : user.transactions) {
             System.out.printf("| %-32s | %-46s | %-36s |\n", t.date, t.type, t.description);
-            if (index % 2 == 0) {
-                System.out.println("============================================================================================================================");
-            }
-            index++;
+
         }
-        if ((index - 1) % 2 != 0) {
             System.out.println("============================================================================================================================");
-        }
+
     }
 
     private void displayDetailsView(Scanner scanner) {

@@ -11,6 +11,19 @@ public class SavingsManager {
     public SavingsManager(SessionManager session) {
         this.session = session;
     }
+    private boolean hasSufficientIncome(User user, double monthlyDeposit) {
+        double netBalance = user.totalIncome - user.totalExpense-user.savings;
+        if (netBalance < monthlyDeposit) {
+            System.out.printf("You don't have enoght money. Please increase your income or reduce expenses.\n");
+            return false;
+        }
+        // Additional checks if you want to ensure totalIncome is > 0, etc.
+        if (user.totalIncome <= 0) {
+            System.out.println("Your total income is zero or negative, cannot proceed with monthly savings.");
+            return false;
+        }
+        return true;
+    }
     private void setSavingsRate(Scanner scanner) {
         User user = session.getLoggedInUser();
         System.out.print("Enter your desired savings rate (5-20%): ");
@@ -64,25 +77,61 @@ public class SavingsManager {
 
     private void calculateMonthlySavings() {
         User user = session.getLoggedInUser();
-        if (user.totalIncome < 250) {
-            System.out.println("Total income is less than $250. No savings will be made this month.");
+        if (user.totalIncome < 0) {
+            System.out.println("Such have have income bigger than 0$. No savings will be made this month.");
             return;
         }
-        double monthlySavings = user.totalIncome * user.savingsRate;
-        user.savings += monthlySavings;
-
-        String date = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
-        user.savingsRecords.add(new User.SavingsRecord(date, monthlySavings));
-
-        if (user.savings >= user.savingsGoal && user.savingsGoal > 0) {
-            System.out.printf("Congratulations! You've reached your savings goal of $%.2f!\n", user.savingsGoal);
+        if (user.savingsRate == 0) {
+            System.out.println("Please set your savings rate first.");
+            return;
         }
-
-        session.saveUserData();
-
-        System.out.printf("Monthly savings of $%.2f has been added. Current total savings: $%.2f\n",
-            monthlySavings, user.savings);
+        if (user.savingsGoal == 0) {
+            System.out.println("Please set your savings goal first.");
+            return;
+        }
+        if (user.savingTimeMonths == 0) {
+            System.out.println("Please set your saving time first.");
+            return;
+        }
+        if ( user.savings>=user.savingsGoal && user.savingsGoal>0) {
+            System.out.println("You have already reached your savings goal.");
+            return;	
+        }
+        
+        try {
+            double remaining = user.savingsGoal - user.savings;
+            if (remaining <= 0) {
+                System.out.println("Your current savings already meet or exceed the goal.");
+                return;
+            }
+            double monthlySavings = remaining / user.savingTimeMonths;
+            if (!hasSufficientIncome(user, monthlySavings)) {
+                return;
+            }
+            user.savings += monthlySavings;
+    
+            // Record this monthly deposit
+            String date = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+            user.savingsRecords.add(new User.SavingsRecord(date, monthlySavings));
+    
+            // Check if goal is reached
+            if (user.savings >= user.savingsGoal) {
+                System.out.printf("Congratulations! You've reached your savings goal of $%.2f!\n", user.savingsGoal);
+            }
+    
+            // Persist the updated data
+            session.saveUserData();
+    
+            // Inform the user
+            System.out.printf("Monthly savings of $%.2f has been added. Current total savings: $%.2f\n",
+                monthlySavings, user.savings);
+    
+        } catch (ArithmeticException e) {
+            // Catches any math errors, e.g., dividing by zero (shouldn't happen if we check savingTimeMonths > 0)
+            System.out.println("Error: Cannot calculate monthly savings due to invalid data.");
+        }
     }
+
 
     private void displaySavingsTable() {
         User user = session.getLoggedInUser();
