@@ -10,8 +10,18 @@ public class TransactionManager {
 
     public TransactionManager(SessionManager session) {
         this.session = session;
+
     }
-    
+
+    public static void clearConsole() {
+        try {
+
+            System.out.print("\033[H\033[2J");
+            System.out.flush();
+        } catch (Exception e) {
+            System.out.println(" Unable to clear screen.");
+        }
+    }
 
     // Add a new transaction (Income, Expense, or Savings)
     public void addTransaction(Scanner scanner) {
@@ -58,7 +68,8 @@ public class TransactionManager {
 
                 // Check if we've reached or exceeded the savings goal
                 if (user.savings >= user.savingsGoal && user.savingsGoal > 0) {
-                    System.out.printf("Congratulations! You've reached your savings goal of $%.2f!\n", user.savingsGoal);
+                    System.out.printf("Congratulations! You've reached your savings goal of $%.2f!\n",
+                            user.savingsGoal);
                 }
             } else {
                 System.out.println("Invalid type. Please enter Income, Expense, or Savings.");
@@ -88,24 +99,34 @@ public class TransactionManager {
             return;
         }
 
-        System.out.println("============================================================================================================================");
-        System.out.println("|                                                  -Selection Menu-                                                        |");
-        System.out.println("|                                   Please select one of the view format options:                                          |");
-        System.out.println("|                                         1) Table Row View                                                                |");
-        System.out.println("|                                         2) Summary View                                                                  |");
-        System.out.println("|                                         3) Details Display View                                                          |");
-        System.out.println("============================================================================================================================");
+        System.out.println(
+                "============================================================================================================================");
+        System.out.println(
+                "|                                                  -Selection Menu-                                                        |");
+        System.out.println(
+                "|                                   Please select one of the view format options:                                          |");
+        System.out.println(
+                "|                                         1) Table Row View                                                                |");
+        System.out.println(
+                "|                                         2) Summary View                                                                  |");
+        System.out.println(
+                "|                                         3) Details Display View                                                          |");
+        System.out.println(
+                "============================================================================================================================");
         System.out.print("Enter Your Choice: ");
         String choice = scanner.nextLine();
 
         switch (choice) {
             case "1":
+                clearConsole();
                 displayTableRowView();
                 break;
             case "2":
+                clearConsole();
                 displaySummaryView();
                 break;
             case "3":
+                clearConsole();
                 displayDetailsView(scanner);
                 break;
             default:
@@ -115,37 +136,53 @@ public class TransactionManager {
 
     private void displayTableRowView() {
         User user = session.getLoggedInUser();
-        System.out.println("============================================================================================================================");
-        System.out.println("|                                                                                                                          |");
-        System.out.println("|                                                    Table Row View                                                        |");
-        System.out.println("|                                                                                                                          |");
-        System.out.println("============================================================================================================================");
-        System.out.println("|       No.        |         Amount          |          Type          |         Date         |         Description         |");
-        System.out.println("============================================================================================================================");
+        System.out.println(
+                "============================================================================================================================");
+        System.out.println(
+                "|                                                                                                                          |");
+        System.out.println(
+                "|                                                    Table Row View                                                        |");
+        System.out.println(
+                "|                                                                                                                          |");
+        System.out.println(
+                "============================================================================================================================");
+        System.out.println(
+                "|       No.        |         Amount          |          Type          |         Date         |         Description         |");
+        System.out.println(
+                "============================================================================================================================");
 
         int index = 1;
         for (Transaction t : user.transactions) {
             System.out.printf("| %-16d | $%-22.2f | %-22s | %-20s | %-27s |\n",
-                index, t.amount, t.type, t.date, t.description);
+                    index, t.amount, t.type, t.date, t.description);
             index++;
         }
-        System.out.println("============================================================================================================================");
+        System.out.println(
+                "============================================================================================================================");
     }
 
     private void displaySummaryView() {
         User user = session.getLoggedInUser();
-        System.out.println("============================================================================================================================");
-        System.out.println("|                                                                                                                          |");
-        System.out.println("|                                                    Summary View                                                          |");
-        System.out.println("|                                                                                                                          |");
-        System.out.println("============================================================================================================================");
-        System.out.println("|               Date               |                      Type                      |              Description             |");
-        System.out.println("============================================================================================================================");
+        System.out.println(
+                "============================================================================================================================");
+        System.out.println(
+                "|                                                                                                                          |");
+        System.out.println(
+                "|                                                    Summary View                                                          |");
+        System.out.println(
+                "|                                                                                                                          |");
+        System.out.println(
+                "============================================================================================================================");
+        System.out.println(
+                "|               Date               |                      Type                      |              Description             |");
+        System.out.println(
+                "============================================================================================================================");
         for (Transaction t : user.transactions) {
             System.out.printf("| %-32s | %-46s | %-36s |\n", t.date, t.type, t.description);
 
         }
-            System.out.println("============================================================================================================================");
+        System.out.println(
+                "============================================================================================================================");
 
     }
 

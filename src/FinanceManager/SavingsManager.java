@@ -11,6 +11,15 @@ public class SavingsManager {
     public SavingsManager(SessionManager session) {
         this.session = session;
     }
+    public static void clearConsole() {
+        try {
+            
+            System.out.print("\033[H\033[2J");
+            System.out.flush();
+        } catch (Exception e) {
+            System.out.println(" Unable to clear screen.");
+        }
+    }
     private boolean hasSufficientIncome(User user, double monthlyDeposit) {
         double netBalance = user.totalIncome - user.totalExpense-user.savings;
         if (netBalance < monthlyDeposit) {
@@ -175,18 +184,23 @@ public class SavingsManager {
             String choice = scanner.nextLine();
             switch (choice) {
                 case "1":
+                    clearConsole();
                     setSavingsRate(scanner);
                     break;
                 case "2":
+                    clearConsole();
                     setSavingsGoal(scanner);
                     break;
                 case "3":
+                    clearConsole();
                     setSavingsTime(scanner);
                     break;
                 case "4":
+                    clearConsole();
                     calculateMonthlySavings();
                     break;
                 case "5":
+                    clearConsole();
                     displaySavingsTable();
                     break;
                 case "6":
