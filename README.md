@@ -69,12 +69,20 @@ git clone https://github.com/Ponhakvontey/Project.git
 cd Project
 ls 
 ```
-## 3. Run the Program
-Compile and execute the main Java file:
+## 3. Setup & Compilation
+### Open in IDE:
+- File > Open > Select FinanceManager folder
+
+### Manual Compile:
 ```
-javac src/Main.java
-java src.Main
+javac FinanceManager/*.java
 ```
+### Run Application:
+```
+java FinanceManager.Main
+```
+### Note:
+- users.txt is created after first login/register
 
 # 💻 Systems Requirement
 - **OS:** Windows 10+ / macOS 10.15 / Linux
@@ -85,3 +93,10 @@ java src.Main
 
 # Conclusion 
 **The Personal Finance Manager** is a practical and educational project demonstrating core software engineering ethics and principles. It empowers users to take control of their personal finances while showcasing object-oriented programming, modular design, and persistent data handling. This tool serves not only as a functional application but also as a foundation for future feature expansion and team collaboration.
+
+# Contact:
+- Dim Ponhakvonety and Neth Barom Phaknit
+- Email: ponhakvonetey123@gmail.com
+- GitHub: [https://github.com/Ponhakvontey/Project.git](https://github.com/Ponhakvontey/Project.git)
+
+You can also open an Issue in this repository.
