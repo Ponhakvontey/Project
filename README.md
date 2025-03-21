@@ -1,6 +1,14 @@
 # <p align="center">**Welcome to Finance Manegement App**</p>
 
 # 📋 Table of Contents
+- [Overview](#overview)
+- [Team Information](#Team-Information)
+- [Features](#features)
+- [Project Structure](#project-structure)
+- [Techology Used](#technology-used)
+- [Setup & Installation](#setup-&-installation)
+- [Systems Requirement](#systems-requirement)
+- [Conclusion](#Conclusion )
 # 📌 Overview
 **The Finance Manager Application** is a Java-based console application created with the purpose of aiding users to track as well as manage all key aspects relating to their financial situation and plans—savings, income, and expenses. It provides user-friendly tools and interfaces for the users to be able to input, modify, and track their current status and data using key database and encryption functions of ArrayList as well as HashMap.
 ## 👥 Team Information
