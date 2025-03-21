@@ -95,7 +95,7 @@ java FinanceManager.Main
 **The Personal Finance Manager** is a practical and educational project demonstrating core software engineering ethics and principles. It empowers users to take control of their personal finances while showcasing object-oriented programming, modular design, and persistent data handling. This tool serves not only as a functional application but also as a foundation for future feature expansion and team collaboration.
 
 # Contact:
-- Dim Ponhakvonety and Neth Barom Phaknit
+- Maintainer: Dim Ponhakvonety and Neth Barom Phaknit
 - Email: ponhakvonetey123@gmail.com
 - GitHub: [https://github.com/Ponhakvontey/Project.git](https://github.com/Ponhakvontey/Project.git)
 
