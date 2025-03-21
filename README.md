@@ -97,6 +97,7 @@ java FinanceManager.Main
 # Contact:
 - Maintainer: Dim Ponhakvonety and Neth Barom Phaknit
 - Email: ponhakvonetey123@gmail.com
+      	 maximusneth@gmail.com
 - GitHub: [https://github.com/Ponhakvontey/Project.git](https://github.com/Ponhakvontey/Project.git)
 
 You can also open an Issue in this repository.
