@@ -1,0 +1,18 @@
++ Task 1: Unit Test 
+1. Is the project completed successfully?
+- Yes, the core functionalities of the Personal Finance Manager have been implemented and tested. Users can log in, manage transactions, set savings goals, and persist their data.
+2. If yes, is your software bug-free?
+- Mostly. Manual testing did not reveal any major bugs. The program runs as expected under valid inputs. Minor improvements (like input validation or UI enhancements) could be considered for future versions.
+3. If yes, is it ready to publish? Where?
+- Yes, the project is ready for academic submission and internal sharing:
+  ✅ GitHub (private or public classroom repo)
+  ✅ School network drive
+  ✅ Group archive .zip file for final submission
+4. Otherwise, can you find those bugs?
+- Not applicable – no critical bugs were found at this time. However, some input validation edge cases (e.g., non-numeric input) might cause exceptions.
+5. If not completed, do you wish to complete it?
+- Not applicable. The main project is completed.
+6. User Manual
+- A detailed user manual is being developed(Reademe.md), which will guide new users through installation and usage.
+7. Can you train other teams on how to use your software?
+- Yes. A training slide presentation (Task 4) will be created to explain system setup, project structure, and maintenance workflow for new developers.  
